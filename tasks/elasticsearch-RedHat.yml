@@ -19,9 +19,6 @@
   when: es_use_repository
   register: redhat_elasticsearch_install_from_repo
   notify: restart elasticsearch
-  until: '"failed" not in redhat_elasticsearch_install_from_repo'
-  retries: 5
-  delay: 10
 
 - name: RedHat - Install Elasticsearch from url
   become: yes
